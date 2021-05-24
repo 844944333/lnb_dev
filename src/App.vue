@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <pageLoadScrollBar></pageLoadScrollBar>
     <transition class="change" name="fade" mode="out-in" >
       <keep-alive >
         <router-view />
@@ -7,6 +8,20 @@
     </transition>
   </div>
 </template>
+
+<script>
+import pageLoadScrollBar from "@/components/pageLoadScrollBar";
+export default ({
+  data () {
+    return {
+
+    }
+  },
+  components: {
+    pageLoadScrollBar
+  }
+})
+</script>
 
 <style lang="scss">
 html {

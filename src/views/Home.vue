@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="wrap">
-      <router-link to="/list" class="item">list</router-link>
+      <router-link to="/home" class="item">home</router-link>
       <router-link to="/list" class="item">list</router-link>
       <router-link to="/list" class="item">list</router-link>
       <router-link to="/list" class="item">list</router-link>
@@ -87,6 +87,11 @@ export default ({
     font-size: .16rem;
     text-align: center;
   }
+  @media screen and (max-width: 400px){
+    .bean {
+      font-size: .14rem;
+    }
+  }
 }
 a {
   text-decoration: none;
@@ -121,7 +126,7 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0.15rem;
+    width: 0.1rem;
     height: 120%;
     background: #232323;
     z-index: -1;
@@ -396,6 +401,7 @@ a {
   flex-wrap: wrap;
   margin-top: .2rem;
   .item {
+    color: #efefef;
     margin: 0 .2rem;
   }
 }

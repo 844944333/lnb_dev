@@ -1,13 +1,12 @@
 <template>
   <div>
-    333
+    列表
   </div>
 </template>
 
 <script>
-
 export default ({
-  name: 'List',
+  name: 'list',
   data () {
     return {
 
@@ -16,6 +15,6 @@ export default ({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
