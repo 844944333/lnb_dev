@@ -1,17 +1,31 @@
 <template>
-  <div>
-    <GiantScreen></GiantScreen>
-    <ceshi style="height: 3333px">
-      ddd
-    </ceshi>
+  <div class="max">
+    <div id="scene" class="img-outer">
+      <div data-depth="0.4" class="layer" >
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.sc.enterdesk.com%2Fedpic%2Ffa%2F81%2F8f%2Ffa818f430074cae321c06690375ae939.jpg&refer=http%3A%2F%2Fup.sc.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624544741&t=112eeceea2b41ac102b6cf8c83e5acf5" class="moveImg" :width="imgWidth" :height="imgHeight" >
+      </div>
+    </div>
+    <div class="header flex align-center space-between">
+<!--              <img src="@/assets/img/whitelogo.png" alt="">-->
+<!--              <router-link :to="{name: 'Home'}" tag="div" class="icon" ><i class="el-icon-s-unfold"></i></router-link>-->
+    </div>
+    <div class="mask"></div>
+    <div class="info">
+      <div class="time">{{date.month}}月 {{date.day}}, {{date.year}}</div>
+      <div class="title">欢迎光临！！
+        <transition name="el-fade-in-linear">
+          <span v-show="!hiddenText" class="tipsText">请向下滚动</span>
+        </transition>
+      </div>
+      <div class="content">眼里有光，心中有爱，一路春暖花开，看淡得失，珍惜拥有，不负时光，不负自己，所有美好，都将如期而至</div>
+    </div>
   </div>
 </template>
 
 <script>
-import GiantScreen from "@/components/GiantScreen";
-import ceshi from '@/components/ceshi'
+import Parallax from 'parallax-js'
 export default ({
-  name: 'homepage',
+  name: 'giantScreen',
   data () {
     return {
       imgWidth: null,
@@ -20,18 +34,21 @@ export default ({
       date: {}
     }
   },
-  components: {
-    GiantScreen,
-    ceshi
-  },
   created () {
     let wWidth = document.documentElement.clientWidth
     let wHeight = document.documentElement.clientHeight
     this.imgWidth = wWidth + 150
     this.imgHeight = wHeight + 150
     if (wWidth <= 600) { this.imgWidth = 1920 / 1.3; this.imgHeight = 960}
-    // this.getYearMonthDay()
     this.getTime()
+    this.hiddenTextEmit()
+  },
+  mounted () {
+    const scene = document.getElementById('scene');
+    new Parallax(scene, {
+      relativeInput: true,
+      clipRelativeInput: true,
+    })
   },
   methods: {
     getTime () {
@@ -139,32 +156,24 @@ export default ({
   color: #fff;
   width: 30%;
   transform: translateY(-50%);
-  color: #ffffff;
   font-size: .5rem;
   .time {
     font-size: .16rem;
   }
   .title {
-    font-size: .2rem;
+    font-size: .3rem;
     margin: .18rem 0 .3rem;
   }
   .content {
     font-size: .14rem;
     line-height: 1.8;
   }
+  @media screen and (max-width: 480px) {
+    .title {
+      font-size: .25rem;
+    }
+  }
 }
-/*/deep/ .el-drawer {
-  background-color: rgba(255,255,255,.92);
-}
-/deep/ .el-drawer.ttb {
-
-  height: 100% !important;
-}*/
-/*.navs {
-  margin-top: .5rem;
-  font-size: .7rem;
-  color: #666
-}*/
 @media screen and (max-width: 900px) {
   .mask {
     clip-path: polygon(0 0,220px 0,700px 100%,0 100%);

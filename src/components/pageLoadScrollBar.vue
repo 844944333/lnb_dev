@@ -1,12 +1,16 @@
 <template>
-  <transition name="el-fade-in-linear">
-    <div class="load"></div>
+  <transition name="van-fade">
+    <div class="load" v-if="showPageLoadScrollBar"></div>
   </transition>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'pageLoadScrollBar'
+  name: 'pageLoadScrollBar',
+  computed: {
+    ...mapState(['showPageLoadScrollBar'])
+  }
 }
 </script>
 
