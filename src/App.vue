@@ -38,12 +38,12 @@ html {
   /* 设置字体大小为 16px ---> font-size: .16rem */
   font-size: 100px !important;
   --themeColor: #006dfe;
+  overflow-x: hidden;
 }
 html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 #app {
   width: 100%;

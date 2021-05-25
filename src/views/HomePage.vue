@@ -2,7 +2,7 @@
   <div>
     <GiantScreen></GiantScreen>
     <ceshi style="height: 3333px">
-      ddd
+
     </ceshi>
   </div>
 </template>
