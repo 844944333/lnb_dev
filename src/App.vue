@@ -19,6 +19,16 @@ export default ({
   },
   components: {
     pageLoadScrollBar
+  },
+  mounted() {
+    this.hidePageLoadScrollBar()
+  },
+  methods: {
+    hidePageLoadScrollBar () {
+      setTimeout(() => {
+        this.$store.commit('setShowPageLoadScrollBar',false)
+      }, 1000)
+    }
   }
 })
 </script>
