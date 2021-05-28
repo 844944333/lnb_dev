@@ -28,10 +28,31 @@
       </div>
     </div>
     <div class="wrap">
-      <router-link to="/home" class="item">home</router-link>
-      <router-link to="/list" class="item">list</router-link>
-      <router-link to="/list" class="item">list</router-link>
-      <router-link to="/list" class="item">list</router-link>
+      <router-link to="/home" class="item">
+        <!--<van-icon name="star" class="icon" />-->
+        <van-icon name="hot-o" class="icon" />
+        <div class="margin-top">主页</div>
+      </router-link>
+      <router-link to="/list" class="item">
+        <van-icon name="label" class="icon" />
+        <div class="margin-top">分类</div>
+      </router-link>
+      <router-link to="/life" class="item">
+        <van-icon name="fire" class="icon" />
+        <div class="margin-top">随笔</div>
+      </router-link>
+      <router-link to="/about" class="item">
+        <van-icon name="underway" class="icon" />
+        <div class="margin-top">关于</div>
+      </router-link>
+    </div>
+    <div class="contact font">
+      <div class="contact_item">
+        <van-icon name="wechat" />
+        : lnb_dev</div>
+      <div class="contact_item">
+        <van-icon name="invition" />
+        : 844944333@qq.com</div>
     </div>
     <a class="bean" href="http://beian.miit.gov.cn/" target="_blank" >桂ICP备2021003495号</a>
   </div>
@@ -81,7 +102,7 @@ export default ({
     bottom: .2rem;
     left: 50%;
     transform: translateX(-50%);
-    color: gold;
+    color: #FFDA72;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: .16rem;
@@ -95,6 +116,38 @@ export default ({
 }
 a {
   text-decoration: none;
+  text-align: center;
+}
+.icon {
+  font-size: .3rem;
+  color: gold;
+}
+.margin-top {
+  margin-top: .1rem;
+  color: #72ff7d;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .2rem;
+  .item {
+    margin: 0 .2rem;
+  }
+}
+.contact {
+  display: flex;
+  justify-content: space-around;
+  margin-top: .3rem;
+  min-width: 1rem;
+  color: azure;
+  font-size: .14rem;
+  .contact_item {
+    display: flex;
+    align-items: center;
+    &:nth-child(2) {
+      margin-left: .2rem;
+    }
+  }
 }
 .center {
   text-align: center;
@@ -395,15 +448,6 @@ a {
     }
   }
 
-}
-.wrap {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: .2rem;
-  .item {
-    color: #efefef;
-    margin: 0 .2rem;
-  }
 }
 
 </style>

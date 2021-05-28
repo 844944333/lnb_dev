@@ -6,7 +6,11 @@ import store from './store'
 
 /* 引入初始化 css */
 import 'reset-css'
-
+/* 引入 iconfont */
+import '@/assets/iconfont/iconfont.css'
+/* 引入 vant */
+import '@/vantui'
+// import
 
 Vue.config.productionTip = false
 

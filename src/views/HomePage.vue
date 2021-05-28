@@ -2,7 +2,7 @@
   <div>
     <GiantScreen></GiantScreen>
     <ceshi style="height: 3333px">
-
+      <van-icon name="underway" />
     </ceshi>
   </div>
 </template>
@@ -32,6 +32,9 @@ export default ({
     if (wWidth <= 600) { this.imgWidth = 1920 / 1.3; this.imgHeight = 960}
     // this.getYearMonthDay()
     this.getTime()
+  },
+  mounted() {
+    window.scrollTo(0,0)
   },
   methods: {
     getTime () {

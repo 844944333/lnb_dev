@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <pageLoadScrollBar></pageLoadScrollBar>
+    <go-top></go-top>
     <transition class="change" name="fade" mode="out-in" >
       <keep-alive >
         <router-view />
@@ -11,6 +12,7 @@
 
 <script>
 import pageLoadScrollBar from "@/components/pageLoadScrollBar";
+import goTop from '@/components/GoTop'
 export default ({
   data () {
     return {
@@ -18,7 +20,8 @@ export default ({
     }
   },
   components: {
-    pageLoadScrollBar
+    pageLoadScrollBar,
+    goTop
   },
   mounted() {
     this.hidePageLoadScrollBar()

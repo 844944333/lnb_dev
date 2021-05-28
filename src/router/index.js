@@ -18,6 +18,14 @@ const routes = [
   {
     path: '/list',
     component: () => import('@/views/List')
+  },
+  {
+    path: '/life',
+    component: () => import('@/views/Life')
+  },
+  {
+    path: '/about',
+    component: () => import('@/views/About')
   }
 ]
 
