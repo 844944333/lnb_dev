@@ -2,22 +2,14 @@
   <div class="max">
     <div id="scene" class="img-outer">
       <div data-depth="0.4" class="layer" >
-        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.sc.enterdesk.com%2Fedpic%2Ffa%2F81%2F8f%2Ffa818f430074cae321c06690375ae939.jpg&refer=http%3A%2F%2Fup.sc.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624544741&t=112eeceea2b41ac102b6cf8c83e5acf5" class="moveImg" :width="imgWidth" :height="imgHeight" >
+        <img src="@/assets/images/home.jpg" class="moveImg" :width="imgWidth" :height="imgHeight" >
       </div>
     </div>
-    <div class="header flex align-center space-between">
-<!--              <img src="@/assets/img/whitelogo.png" alt="">-->
-<!--              <router-link :to="{name: 'Home'}" tag="div" class="icon" ><i class="el-icon-s-unfold"></i></router-link>-->
-    </div>
-    <div class="mask"></div>
-    <div class="info">
-      <div class="time">{{date.month}}月 {{date.day}}, {{date.year}}</div>
-      <div class="title">欢迎光临！！
-        <transition name="el-fade-in-linear">
-          <span v-show="!hiddenText" class="tipsText">请向下滚动</span>
-        </transition>
+    <div class="header">
+      <img class="header_img" src="@/assets/images/home.jpg" alt="">
+      <div class="text font">
+        过错是暂时的遗憾 <br>而错过则是永远的遗憾！
       </div>
-      <div class="content">眼里有光，心中有爱，一路春暖花开，看淡得失，珍惜拥有，不负时光，不负自己，所有美好，都将如期而至</div>
     </div>
   </div>
 </template>
@@ -70,14 +62,6 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-@keyframes move {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-}
 #scene{
   // height: 100%;
   position: relative;
@@ -86,6 +70,37 @@ export default ({
     position: absolute;
     max-width: none;
     display: block;
+  }
+}
+.header {
+  position: absolute;
+  z-index: 999999;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .header_img {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-size: cover;
+    border: .01rem solid #fbb8ac;
+    box-shadow: 0 0 .5rem #fbb8ac;
+  }
+  .text {
+    margin-top: .2rem;
+    line-height: 1.7;
+    color: #cbf5fb;
+    font-size: .14rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header {
+    top: 1.5rem;
   }
 }
 .max {
@@ -115,39 +130,13 @@ export default ({
   display: inline-block;
   animation: move .6s infinite alternate;
 }
-.header {
-  padding: 0 .4rem;
-  position: absolute;
-  left: 0;
-  top: .7rem;
-  width: 100%;
-  height: auto;
-  z-index: 99999;
-  img {
-    width: 1rem;
-    height: .44rem;
-    cursor: pointer;
+@keyframes move {
+  from {
+    transform: translateY(0px);
   }
-  .icon {
-    font-size: .2rem;
-    color: #ff3600;
-    background: rgba(255, 255, 255, .8);
-    width: .3rem;
-    height: .3rem;
-    text-align: center;
-    line-height: 32px;
-    border-radius: .02rem;
+  to {
+    transform: translateY(-20px);
   }
-}
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #4c50cf86;
-  clip-path: polygon(0 0,25% 0,60% 100%,0 100%);
-  pointer-events: none;
 }
 .info {
   position: absolute;
@@ -174,19 +163,7 @@ export default ({
     }
   }
 }
-@media screen and (max-width: 900px) {
-  .mask {
-    clip-path: polygon(0 0,220px 0,700px 100%,0 100%);
-  }
-}
 @media screen and (max-width: 780px) {
-  .header {
-    top: 40px;
-    padding: 0 20px;
-  }
-  .mask {
-    clip-path: none
-  }
   .info {
     bottom: 8%;
     left: 5%;

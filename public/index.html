@@ -6,6 +6,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+      <style>
+          /* 滚动条整体样式 */
+          html::-webkit-scrollbar {
+              width: .08rem;
+              height: .06rem;
+          }
+          /* 滚动条里面小方块样式 */
+          html::-webkit-scrollbar-thumb {
+              -webkit-box-shadow: inset 0 0 .05rem rgba(0, 0, 0, .2);
+              border-radius: 1rem;
+              background: linear-gradient(to bottom, #0CB8EA, #0153C3);
+          }
+          /* 滚动条里面轨道样式 */
+          html::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 .05rem rgba(0, 0, 0, .2);
+              border-radius: 0;
+              background: #0DCDF6;
+          }
+      </style>
   </head>
   <body>
     <noscript>
