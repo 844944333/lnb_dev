@@ -1,5 +1,8 @@
 <template>
   <div class="max">
+    <div class="top">
+      头部
+    </div>
     <div id="scene" class="img-outer">
       <div data-depth="0.4" class="layer" >
         <img src="@/assets/images/home.jpg" class="moveImg" :width="imgWidth" :height="imgHeight" >
@@ -62,6 +65,33 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
+.top {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  padding: .2rem;
+}
+.max {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999;
+  .img-outer {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .moveImg {
+    margin-bottom: .2rem;
+    top: -.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    max-width: none;
+    display: block;
+  }
+}
 #scene{
   // height: 100%;
   position: relative;
@@ -90,6 +120,7 @@ export default ({
     background-size: cover;
     border: .01rem solid #fbb8ac;
     box-shadow: 0 0 .5rem #fbb8ac;
+    cursor: pointer;
   }
   .text {
     margin-top: .2rem;
@@ -101,27 +132,6 @@ export default ({
 @media screen and (max-width: 800px) {
   .header {
     top: 1.5rem;
-  }
-}
-.max {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  z-index: 9999;
-  .img-outer {
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  .moveImg {
-    margin-bottom: .2rem;
-    top: -.3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    max-width: none;
-    display: block;
   }
 }
 .tipsText {

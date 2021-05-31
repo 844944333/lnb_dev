@@ -10,7 +10,8 @@ import 'reset-css'
 import '@/assets/iconfont/iconfont.css'
 /* 引入 vant */
 import '@/vantui'
-// import
+/* 引入 animate */
+import 'animate.css'
 
 Vue.config.productionTip = false
 
