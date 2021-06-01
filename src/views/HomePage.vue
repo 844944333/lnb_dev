@@ -1,15 +1,13 @@
 <template>
   <div>
     <GiantScreen></GiantScreen>
-    <ceshi style="height: 3333px">
-      <van-icon name="underway" />
-    </ceshi>
+    <home-articles ></home-articles>
   </div>
 </template>
 
 <script>
 import GiantScreen from "@/components/GiantScreen";
-import ceshi from '@/components/ceshi'
+import HomeArticles from '@/components/HomeArticles'
 export default ({
   name: 'homepage',
   data () {
@@ -22,7 +20,7 @@ export default ({
   },
   components: {
     GiantScreen,
-    ceshi
+    HomeArticles
   },
   created () {
     let wWidth = document.documentElement.clientWidth

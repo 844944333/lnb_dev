@@ -1,7 +1,17 @@
 <template>
   <div class="max">
-    <div class="top">
-      头部
+    <div class="fixed">
+      <div class="top">
+        <div class="top_info">
+          <van-icon name="bars" class="top_icon" />
+          <img class="top_avatar" src="@/assets/images/home.jpg" alt="">
+          <span class="top_name font">lnb_dev</span>
+        </div>
+        <div class="search">
+          搜索
+        </div>
+      </div>
+      <van-popup class="popup" v-model="show" position="left" :style="{ height: '30%' }" />
     </div>
     <div id="scene" class="img-outer">
       <div data-depth="0.4" class="layer" >
@@ -26,7 +36,8 @@ export default ({
       imgWidth: null,
       imgHeight: null,
       hiddenText: false,
-      date: {}
+      date: {},
+      show: true
     }
   },
   created () {
@@ -65,11 +76,45 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-.top {
+.fixed {
   position: fixed;
-  z-index: 99999;
+  z-index: 999999999;
   width: 100%;
-  padding: .2rem;
+  background: #fff;
+  display: none;
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .1rem .15rem;
+    box-sizing: border-box;
+    color: #000;
+    border-bottom: .01rem solid #999;
+    .top_info {
+      display: flex;
+      align-items: center;
+      .top_icon {
+        font-size: .26rem;
+      }
+      .top_avatar {
+        width: .35rem;
+        height: .35rem;
+        border-radius: 50%;
+        margin: 0 .12rem;
+      }
+      .top_name {
+        font-size: .18rem;
+      }
+    }
+  }
+  .popup {
+    width: .65vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .fixed {
+    display: inline-block;
+  }
 }
 .max {
   width: 100vw;
@@ -159,18 +204,18 @@ export default ({
   .time {
     font-size: .16rem;
   }
-  .title {
-    font-size: .3rem;
-    margin: .18rem 0 .3rem;
-  }
+  //.title {
+  //  font-size: .3rem;
+  //  margin: .18rem 0 .3rem;
+  //}
   .content {
     font-size: .14rem;
     line-height: 1.8;
   }
   @media screen and (max-width: 480px) {
-    .title {
-      font-size: .25rem;
-    }
+    //.title {
+    //  font-size: .25rem;
+    //}
   }
 }
 @media screen and (max-width: 780px) {
