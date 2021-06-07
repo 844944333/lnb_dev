@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/Home'),
+    component: () => import('@/views/App'),
     meta: {
       title: 'ltb_dev'
     }
@@ -16,8 +16,8 @@ const routes = [
     component: () => import('@/views/HomePage')
   },
   {
-    path: '/list',
-    component: () => import('@/views/List')
+    path: '/category',
+    component: () => import('@/views/Category')
   },
   {
     path: '/life',

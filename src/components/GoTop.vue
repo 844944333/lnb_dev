@@ -1,5 +1,5 @@
 <template>
-  <div @click="goTop" v-show="btnFlag" ref="top" class="iconfont icon-fanhuidingbu go-top" ></div>
+  <div @click="goTop" v-show="btnFlag" ref="top" class="iconfont icon-fanhuidingbu go-top animate__animated animate__fadeInUpBig" ></div>
 </template>
 
 <script >
@@ -34,8 +34,9 @@ export default ({
 <style lang="scss" scoped>
 .go-top {
   position: fixed;
-  bottom: .3rem;
+  bottom: .5rem;
   right: .2rem;
+  z-index: 99999;
   font-size: .4rem;
   color: #999;
   cursor: pointer;

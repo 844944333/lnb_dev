@@ -1,29 +1,16 @@
 <template>
   <div class="max">
-    <div class="fixed">
-      <div class="top">
-        <div class="top_info">
-          <van-icon name="bars" class="top_icon" />
-          <img class="top_avatar" src="@/assets/images/home.jpg" alt="">
-          <span class="top_name font">lnb_dev</span>
-        </div>
-        <div class="search">
-          搜索
-        </div>
-      </div>
-      <van-popup class="popup" v-model="show" position="left" :style="{ height: '30%' }" />
-    </div>
     <div id="scene" class="img-outer">
       <div data-depth="0.4" class="layer" >
         <img src="@/assets/images/home.jpg" class="moveImg" :width="imgWidth" :height="imgHeight" >
       </div>
     </div>
-    <div class="header">
+    <router-link to="/" tag="div" class="header">
       <img class="header_img" src="@/assets/images/home.jpg" alt="">
       <div class="text font">
         过错是暂时的遗憾 <br>而错过则是永远的遗憾！
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -37,7 +24,6 @@ export default ({
       imgHeight: null,
       hiddenText: false,
       date: {},
-      show: true
     }
   },
   created () {
@@ -76,46 +62,6 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-.fixed {
-  position: fixed;
-  z-index: 999999999;
-  width: 100%;
-  background: #fff;
-  display: none;
-  .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .1rem .15rem;
-    box-sizing: border-box;
-    color: #000;
-    border-bottom: .01rem solid #999;
-    .top_info {
-      display: flex;
-      align-items: center;
-      .top_icon {
-        font-size: .26rem;
-      }
-      .top_avatar {
-        width: .35rem;
-        height: .35rem;
-        border-radius: 50%;
-        margin: 0 .12rem;
-      }
-      .top_name {
-        font-size: .18rem;
-      }
-    }
-  }
-  .popup {
-    width: .65vw;
-  }
-}
-@media screen and (max-width: 800px) {
-  .fixed {
-    display: inline-block;
-  }
-}
 .max {
   width: 100vw;
   height: 100vh;

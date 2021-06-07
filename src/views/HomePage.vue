@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{paddingTop: headerHeight + 'px'}">
     <GiantScreen></GiantScreen>
     <home-articles ></home-articles>
   </div>
@@ -28,11 +28,15 @@ export default ({
     this.imgWidth = wWidth + 150
     this.imgHeight = wHeight + 150
     if (wWidth <= 600) { this.imgWidth = 1920 / 1.3; this.imgHeight = 960}
-    // this.getYearMonthDay()
     this.getTime()
   },
   mounted() {
     window.scrollTo(0,0)
+  },
+  computed: {
+    headerHeight () {
+      return this.$store.state.headerHeight
+    }
   },
   methods: {
     getTime () {
@@ -54,7 +58,7 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-@keyframes move {
+/*@keyframes move {
   from {
     transform: translateY(0px);
   }
@@ -153,7 +157,7 @@ export default ({
     font-size: .14rem;
     line-height: 1.8;
   }
-}
+}*/
 /*/deep/ .el-drawer {
   background-color: rgba(255,255,255,.92);
 }
@@ -166,7 +170,7 @@ export default ({
   font-size: .7rem;
   color: #666
 }*/
-@media screen and (max-width: 900px) {
+/*@media screen and (max-width: 900px) {
   .mask {
     clip-path: polygon(0 0,220px 0,700px 100%,0 100%);
   }
@@ -186,5 +190,5 @@ export default ({
     width: 70%;
     transform: none;
   }
-}
+}*/
 </style>

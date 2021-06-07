@@ -33,7 +33,7 @@
         <van-icon name="hot-o" class="icon" />
         <div class="margin-top">主页</div>
       </router-link>
-      <router-link to="/list" class="item">
+      <router-link to="/category" class="item">
         <van-icon name="label" class="icon" />
         <div class="margin-top">分类</div>
       </router-link>
@@ -73,7 +73,7 @@ export default ({
 <style lang="scss" scoped>
 .home {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;

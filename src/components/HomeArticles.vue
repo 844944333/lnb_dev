@@ -1,19 +1,21 @@
 <template>
   <div class="article font">
-    <div class="item wow animate__animated animate__fadeInLeft">
-      <img class="img" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
+    <router-link to="/" tag="div" class="item wow animate__animated animate__fadeInLeft">
+      <img class="img wow animate__animated animate__bounce" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
       <div class="info">
         <div class="title">标33题</div>
         <div class="desc">描述</div>
         <div class="msg">
-          <div class="category">分234类</div>
+          <div class="category">分类: JavaScript</div>
           <div class="category">发布时间</div>
-          <div class="category">浏览df</div>
+          <div class="category">
+            <van-icon name="browsing-history" class="icon" />
+          </div>
         </div>
       </div>
-    </div>
+    </router-link>
     <div class="item wow animate__animated animate__fadeInRight">
-      <img class="img" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
+      <img class="img wow animate__animated animate__bounce" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
       <div class="info">
         <div class="title">标题</div>
         <div class="desc">描述描asdf述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
@@ -57,13 +59,15 @@ export default {
     justify-content: space-between;
     align-items: center;
     .img {
-      width: 25vw;
-      height: 18vw;
+      width: 28vw;
+      height: 16vw;
       margin-right: .4rem;
+      border-radius: 0.08rem;
+      flex-shrink: 0;
     }
     .info {
       width: 100%;
-      min-height: 18vw;
+      min-height: 16vw;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -79,6 +83,9 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .icon {
+          color: var(--themeColor);
+        }
       }
     }
   }

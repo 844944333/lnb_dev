@@ -1,6 +1,6 @@
 <template>
-  <div>
-    列表
+  <div :style="{paddingTop: headerHeight + 'px'}">
+    分类
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default ({
   data () {
     return {
 
+    }
+  },
+  computed: {
+    headerHeight () {
+      return this.$store.state.headerHeight
     }
   }
 })

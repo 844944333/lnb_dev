@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <pageLoadScrollBar></pageLoadScrollBar>
+    <Header v-show="!(path === '/')"></Header>
     <go-top></go-top>
     <transition class="change" name="fade" mode="out-in" >
       <keep-alive >
@@ -12,25 +13,34 @@
 
 <script>
 import pageLoadScrollBar from "@/components/pageLoadScrollBar";
+import Header from "@/components/Header";
 import goTop from '@/components/GoTop'
 export default ({
   data () {
     return {
-
+      path: ''
     }
   },
   components: {
     pageLoadScrollBar,
-    goTop
+    goTop,
+    Header
   },
   mounted() {
     this.hidePageLoadScrollBar()
+    // 判断路由
+    this.path = this.$route.path
   },
   methods: {
     hidePageLoadScrollBar () {
       setTimeout(() => {
         this.$store.commit('setShowPageLoadScrollBar',false)
       }, 1000)
+    }
+  },
+  watch:{
+    $route(to){
+      this.path = to.path
     }
   }
 })
@@ -46,7 +56,6 @@ html {
 html,
 body {
   width: 100%;
-  height: 100%;
 }
 #app {
   width: 100%;
@@ -74,6 +83,15 @@ body {
 .fade-enter {
   opacity: 0;
   transform: translateX(20px);
+}
+.flex {
+  display: flex;
+}
+.flex-direction {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
 }
 
 </style>
