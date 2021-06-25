@@ -9,20 +9,20 @@
         </router-link>
       </div>
       <div class="search">
-        搜索
+        <van-icon name="search" class="top_icon"/>
       </div>
     </div>
     <van-popup v-model="show" position="left" class="popup"  :style="{ width: '70%' }" @click="close">
       <div class="popup_box">
         <div class="popup_header">
-          <router-link to="/" tag="div" class="avatar flex align-center">
+          <router-link to="/" class="avatar flex align-center">
             <img class="top_avatar" src="@/assets/images/home.jpg" alt="">
             <span class="top_name font">lnb_dev</span>
           </router-link>
           <!-- <van-icon name="clear" class="popup_close" @click="show = false" /> -->
         </div>
         <div class="popup_content">
-          <router-link :to="item.link" tag="div" class="popup_item" v-for="(item, index) in navList" :key="index">
+          <router-link :to="item.link" class="popup_item" v-for="(item, index) in navList" :key="index">
             <div class="flex align-center">
               <van-icon :name="item.icon" class="icon" :class="['icon-' + index]" />
               <span class="popup_item_text">{{ item.name }}</span>
@@ -42,9 +42,9 @@ export default ({
       show: false,
       navList: [
         {
-          link: '/',
+          link: '/home',
           icon: 'hot-o',
-          name: '首页'
+          name: '主页'
         },
         {
           link: '/category',
@@ -107,6 +107,11 @@ export default ({
       }
       .top_name {
         font-size: .18rem;
+      }
+    }
+    .search {
+      .top_icon {
+        font-size: .26rem;
       }
     }
   }

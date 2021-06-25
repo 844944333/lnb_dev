@@ -5,7 +5,7 @@
         <img src="@/assets/images/home.jpg" class="moveImg" :width="imgWidth" :height="imgHeight" >
       </div>
     </div>
-    <router-link to="/" tag="div" class="header">
+    <router-link to="/" class="header">
       <img class="header_img" src="@/assets/images/home.jpg" alt="">
       <div class="text font">
         过错是暂时的遗憾 <br>而错过则是永远的遗憾！
@@ -105,8 +105,8 @@ export default ({
   align-items: center;
   text-align: center;
   .header_img {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-size: cover;
     border: .01rem solid #fbb8ac;
@@ -123,6 +123,10 @@ export default ({
 @media screen and (max-width: 800px) {
   .header {
     top: 1.5rem;
+    .header_img {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }
 .tipsText {

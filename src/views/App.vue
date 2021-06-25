@@ -11,12 +11,12 @@
           <div class="side"></div>
         </div>
         <div class="text">
-          <div class="text--backing">ltb_dev</div>
+          <div class="text--backing">lnb_dev</div>
           <div class="text--left">
-            <div class="inner">ltb_dev</div>
+            <div class="inner">lnb_dev</div>
           </div>
           <div class="text--right">
-            <div class="inner">ltb_dev</div>
+            <div class="inner">lnb_dev</div>
           </div>
         </div>
       </div>

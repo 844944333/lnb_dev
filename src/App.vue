@@ -63,6 +63,9 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: .16rem;
 }
+a {
+  text-decoration: none;
+}
 @font-face{
   font-family: font;
   src: url("./assets/font/JetBrainsMono-Regular.ttf");

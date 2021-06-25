@@ -1,28 +1,24 @@
 <template>
   <div class="article font">
-    <router-link to="/" tag="div" class="item wow animate__animated animate__fadeInLeft">
+    <div class="item wow animate__animated animate__fadeInLeft" @click="toDetail"
+         v-for="(item, index) in 10" :key="index"
+         :class="{'animate__fadeInLeft': index % 2 === 0, 'animate__fadeInRight': index % 2 !== 0}"
+    >
       <img class="img wow animate__animated animate__bounce" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
       <div class="info">
         <div class="title">标33题</div>
-        <div class="desc">描述</div>
+        <div class="desc">描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述</div>
         <div class="msg">
-          <div class="category">分类: JavaScript</div>
-          <div class="category">发布时间</div>
+          <div class="category flex align-center icon">
+            <van-icon name="label" class="icon"/>
+            <span>
+              JavaScript
+            </span>
+          </div>
+          <div class="category">2021-06-28 14:00:00</div>
           <div class="category">
             <van-icon name="browsing-history" class="icon" />
           </div>
-        </div>
-      </div>
-    </router-link>
-    <div class="item wow animate__animated animate__fadeInRight">
-      <img class="img wow animate__animated animate__bounce" src="http://rocky10.cn/img/home.ef8f0e1a.jpg" alt="">
-      <div class="info">
-        <div class="title">标题</div>
-        <div class="desc">描述描asdf述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
-        <div class="msg">
-          <div class="category">分类</div>
-          <div class="category">发布时间</div>
-          <div class="category">浏览</div>
         </div>
       </div>
     </div>
@@ -40,6 +36,11 @@ export default {
   },
   mounted() {
     new WOW({live: false}).init()
+  },
+  methods: {
+    toDetail () {
+      this.$router.push({path:'/detail',query: {id:'1'}})
+    }
   }
 }
 </script>
@@ -77,12 +78,20 @@ export default {
       }
       .desc {
         flex: 6;
+        width: 100%;
+        margin: .2rem 0;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 11;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
       }
       .msg {
         flex: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: .16rem;
         .icon {
           color: var(--themeColor);
         }
@@ -118,20 +127,14 @@ export default {
         }
         .desc {
           font-size: .18rem;
-          width: 100%;
-          margin: .2rem 0;
-          display: -webkit-box;
-          overflow: hidden;
-          -webkit-line-clamp: 2;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
         }
         .msg {
           flex: 2;
           margin: 0 auto;
           width: 100%;
-          background: #0CB8EA;
           text-align: center;
+          font-size: .14rem;
         }
       }
     }
